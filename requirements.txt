@@ -1,0 +1,11 @@
+streamlit
+langchain
+langchain-community
+langchain-core
+langchain-openai
+langchain-huggingface
+langchain-together
+google-generativeai
+agno
+duckduckgo-search
+chromadb
