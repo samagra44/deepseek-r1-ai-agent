@@ -15,6 +15,7 @@ list_of_files = [
     "utils/web_agents.py",
     "utils/rag_agents.py",
     "backend/__init__.py",
+    "tests/test.py",
     "backend/chroma_db.py",
     "app.py",
     "requirements.txt",
