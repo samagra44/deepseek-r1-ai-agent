@@ -9,3 +9,6 @@ google-generativeai
 agno
 duckduckgo-search
 chromadb
+beautifulsoup4
+pymupdf
+langchain-google-genai
