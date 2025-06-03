@@ -6,7 +6,7 @@ This is a Retrieval-Augmented Generation (RAG) application built with Streamlit 
 
 ## Core Components
        
-1. Main Application ```(app.py)```
+### Main Application ```(app.py)```
     
 - Built with Streamlit for the user interface
 - Implements a chat interface for user interactions
@@ -17,14 +17,14 @@ This is a Retrieval-Augmented Generation (RAG) application built with Streamlit 
 - URL ingestion
 - Chat history management
 
-2. Backend Components
+## Backend Components
    
 ### ChromaDB Integration ```(backend/chroma_db.py)```
 - Vector database for storing and retrieving document embeddings
 - Handles document collection management
 - Implements similarity search functionality
 
-3. Helper Modules   
+## Helper Modules   
    
 ### PDF Processing ```(helper/pdf_ingestion.py)```
 - Handles PDF document parsing and processing
@@ -33,7 +33,7 @@ This is a Retrieval-Augmented Generation (RAG) application built with Streamlit 
 - Document Chunking ```(helper/split_document_chunks.py)```
 - Implements document splitting strategies
 
-4. Utility Modules
+## Utility Modules
 
 ### RAG Agents ```(utils/rag_agents.py)```
 - Implements the RAG pipeline
@@ -42,7 +42,7 @@ This is a Retrieval-Augmented Generation (RAG) application built with Streamlit 
 - Handles web search functionality
 - Implements web content processing
 
-5. Dependencies
+## Dependencies
 - The project relies on several key libraries:
 - ```streamlit```: Web application framework
 - ```langchain``` and related packages: For LLM integration and RAG implementation
@@ -52,11 +52,11 @@ This is a Retrieval-Augmented Generation (RAG) application built with Streamlit 
 - ```beautifulsoup4```: Web scraping
 - ```pymupdf```: PDF processing
 
-6. Features
+## Features
     
-- Document Processing
-- PDF upload and processing
-- Web URL ingestion
+- Document Processing 📄
+- PDF upload and processing 📂
+- Web URL ingestion 🌐
 - Document chunking and embedding
 - RAG Implementation
 - Context retrieval from uploaded documents
@@ -77,20 +77,20 @@ This is a Retrieval-Augmented Generation (RAG) application built with Streamlit 
 - Web search fallback
 - Similarity threshold adjustment
 
-7. Technical Implementation
+## Technical Implementation
     
-1. Document Processing Pipeline
+1. **Document Processing Pipeline**
 - Documents are split into chunks
 - Chunks are embedded and stored in ChromaDB
 - Similarity search is performed for relevant context
       
-2. RAG Pipeline
+2. **RAG Pipeline**
 - User query is processed
 - Relevant context is retrieved from documents
 - Context is combined with query for response generation
 - Web search fallback if needed
     
-3. Response Generation
+3. **Response Generation**
 - Uses DeepSeek model for response generation
 - Incorporates retrieved context
 - Handles both document-based and web-based responses
