@@ -52,30 +52,62 @@ This is a Retrieval-Augmented Generation (RAG) application built with Streamlit 
 - ```beautifulsoup4```: Web scraping
 - ```pymupdf```: PDF processing
 
-## Features
-    
-- Document Processing 📄
-- PDF upload and processing 📂
-- Web URL ingestion 🌐
-- Document chunking and embedding
-- RAG Implementation
-- Context retrieval from uploaded documents
-- Similarity-based document search
-- Context-aware response generation
-- Web Search Integration
-- Fallback web search capability
-- Web content processing
-- Search result integration
-- User Interface
-- Clean, intuitive chat interface
-- Configuration sidebar
-- Document upload interface
-- Chat history management
-- Configuration Options
-- Model selection
-- RAG mode toggle
-- Web search fallback
-- Similarity threshold adjustment
+## 🚀 Features
+### **📄 Document Processing**
+- 📂 Upload & Process PDFs
+- Easily upload PDF documents for processing and retrieval.
+
+- 🌐 Ingest Web URLs
+- Extract and embed content directly from web pages.
+
+- ✂️ Document Chunking & Embedding
+- Automatically split documents into chunks and generate vector embeddings.
+
+### **🧠 RAG (Retrieval-Augmented Generation)**
+- 🔍 Context Retrieval
+- Fetch relevant context from uploaded documents in real-time.
+
+- 🧭 Similarity-Based Search
+- Perform semantic search across document embeddings.
+
+- 💬 Context-Aware Responses
+- Generate answers grounded in your uploaded content.
+
+### **🌎 Web Search Integration**
+- 🆘 Fallback Web Search
+- Automatically switch to web search when documents lack relevant context.
+
+- 📰 Web Content Processing
+- Extract meaningful information from web pages.
+
+- 🔗 Search Result Integration
+- Blend web results seamlessly into chat responses.
+
+### **🧑‍💻 User Interface**
+- 💬 Clean & Intuitive Chat Interface
+- User-friendly design for smooth interactions.
+
+- ⚙️ Configuration Sidebar
+- Easily adjust settings without leaving the chat.
+
+- 📥 Document Upload Interface
+- Drag & drop documents directly into the app.
+
+- 🕒 Chat History Management
+- Review and manage previous conversations.
+
+### **🛠️ Configuration Options**
+- 🤖 Model Selection
+- Choose your preferred language model.
+
+- 🔁 Toggle RAG Mode
+- Enable or disable document-based retrieval.
+
+- 🌐 Web Search Fallback
+- Turn fallback search on or off.
+
+- 📏 Adjust Similarity Threshold
+- Fine-tune how closely results should match your query.
 
 ## Technical Implementation
     
