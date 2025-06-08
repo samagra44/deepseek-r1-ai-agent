@@ -1,12 +1,16 @@
 import re
 import os
 from agno.agent import Agent
-from config.node import TOGETHER_AI_API_KEY
-from config.node import TOGETHER_AI_MODEL
-from config.node import OPENROUTER_MODEL
-from config.node import OPENROUTER_API_KEY
+# from config.node import TOGETHER_AI_API_KEY
+# from config.node import TOGETHER_AI_MODEL
+# from config.node import OPENROUTER_MODEL
+# from config.node import OPENROUTER_API_KEY
 from agno.models.together import Together
 from agno.models.openrouter import OpenRouter
+import streamlit as st
+
+TOGETHER_AI_API_KEY = st.secrets["TOGETHER_AI_API_KEY"]
+TOGETHER_AI_MODEL = st.secrets["TOGETHER_AI_MODEL"]
 
 os.environ['OPENAI_API_KEY'] = TOGETHER_AI_API_KEY
 
