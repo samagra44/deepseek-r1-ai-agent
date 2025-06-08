@@ -1,3 +1,6 @@
+import sys
+import pysqlite3
+sys.modules['sqlite3'] = pysqlite3
 from agno.vectordb.chroma import ChromaDb
 from langchain_huggingface import HuggingFaceEndpointEmbeddings
 import streamlit as st

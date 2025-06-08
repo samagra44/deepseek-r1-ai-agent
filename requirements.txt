@@ -14,4 +14,5 @@ chromadb>=0.4.13,<0.5.0
 beautifulsoup4==4.13.4
 pymupdf==1.25.5
 numpy<2.0.0
+pysqlite3-binary
 # langchain-google-genai==2.1.4
