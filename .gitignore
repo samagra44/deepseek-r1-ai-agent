@@ -123,3 +123,7 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+data/
+chroma_db/
+.env.*
+!.env.example
