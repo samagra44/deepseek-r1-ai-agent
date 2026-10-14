@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ app_name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='css/app.css') }}?v=5">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">🧠</span>
+          <div class="logo-text">
+            <span class="logo-title">DeepSeek RAG</span>
+            <span class="logo-sub">Knowledge Workspace</span>
+          </div>
+        </div>
+        <button class="sidebar-close" id="sidebar-close" aria-label="Close sidebar">&times;</button>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-label">Context Sources</h3>
+        <div class="toggle-group">
+          <label class="toggle">
+            <input id="rag-toggle" type="checkbox" checked>
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span class="toggle-text">Document context</span>
+          </label>
+          <label class="toggle">
+            <input id="web-toggle" type="checkbox">
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span class="toggle-text">Web search</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-label">Add Knowledge</h3>
+        <div class="upload-area" id="upload-area">
+          <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <span class="upload-text">Upload PDF</span>
+          <input id="pdf-file" type="file" accept="application/pdf">
+        </div>
+        <form id="url-form" class="url-form">
+          <input id="source-url" type="url" placeholder="https://example.com" required>
+          <button type="submit" class="btn-icon" aria-label="Add URL">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="sidebar-section sidebar-docs">
+        <div class="sidebar-label-row">
+          <h3 class="sidebar-label">My Knowledge</h3>
+          <button id="clear-docs" class="btn-text" title="Remove all my documents">Clear all</button>
+        </div>
+        <div id="doc-list" class="doc-list">
+          <p class="doc-list-empty">No documents yet.</p>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div id="status" class="status">Ready</div>
+      </div>
+    </aside>
+
+    <section class="chat-panel">
+      <header class="chat-header">
+        <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="chat-header-info">
+          <h2 class="chat-title">Ask anything</h2>
+          <span class="chat-subtitle" id="chat-subtitle">Start a conversation</span>
+        </div>
+        <button id="clear-chat" class="btn-ghost" title="Clear conversation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </button>
+      </header>
+
+      <div id="messages" class="messages">
+        <div class="welcome">
+          <div class="welcome-icon">🧠</div>
+          <h3>Welcome to DeepSeek RAG</h3>
+          <p>Upload a PDF or add a URL to build your knowledge base, then ask anything.</p>
+        </div>
+      </div>
+
+      <div id="loading-indicator" class="loading hidden">
+        <div class="spinner"></div>
+        <span>Thinking...</span>
+      </div>
+
+      <form id="chat-form" class="composer">
+        <textarea id="message" rows="1" placeholder="Ask a question..." required></textarea>
+        <button id="send-button" class="btn-send" aria-label="Send message">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </form>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js" defer></script>
+  <script src="{{ url_for('static', path='js/app.js') }}" defer></script>
+</body>
+</html>
